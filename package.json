@@ -1,0 +1,27 @@
+{
+  "name": "cc_weatherapp",
+  "version": "1.0.0",
+  "description": "creative app for checking the weather",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack mode --prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "js",
+    "node",
+    "coderscamp"
+  ],
+  "author": "Mateusz Janowski, Angelika Kuleta, Michał Nikoniuk, Szymon Oberek",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
