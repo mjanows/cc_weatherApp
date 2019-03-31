@@ -15,7 +15,7 @@
     "node",
     "coderscamp"
   ],
-  "author": "Mateusz Janowski, Angelika Kuleta, Michał Nikoniuk, Szymon Oberek",
+  "author": "Mateusz Janowski, Angelika Kuleta, Michał Nikoniuk, Szymon Oberbek",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.0",
