@@ -1,9 +1,17 @@
 import "@babel/polyfill";
-import Forecast from "./forecast.js";
+import App from "./app.js";
 
 console.log('it run');
 
-const forecast = new Forecast();
+const app = new App();
 
-forecast.getCurrentMeasurementByCityName('Wroclaw').then(data => console.log(data));
-forecast.getForecastByCityName('Wroclaw').then(data => console.log(data));
+async function init() {
+    let current = await app.getCurrentByCityName('Wroclaw');
+    let forecast = await app.getForecastByCityName('Wroclaw');   
+    console.log(current);
+    console.log(forecast);
+
+    app.setData(current, forecast);
+}
+
+init();

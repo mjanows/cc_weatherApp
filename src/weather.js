@@ -9,8 +9,8 @@ class Weather {
         this.WeatherId; //id z największą ilością wystąpień
         this.WeatherDescription;
 
-        //średnie pomiarów godzinowych
-        this.percipitation;
+        //średnie pomiarów
+        this.humidity;
         this.windSpeed;
         this.clouds;
         this.pressure;
