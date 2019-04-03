@@ -1,5 +1,6 @@
 import Weather from './weather.js'
 import Measurement from './measurement.js'
+import { createPublicKey } from 'crypto';
 
 const apiKey = 'ae6be9da7ef50b05b98fc3ddafcb32b9';
 
@@ -46,11 +47,34 @@ class App {
             measurements.push(m);
         }
 
-       console.log(measurements)
+        console.log(measurements)
 
-       //TODO
-       //tablica obiektów klasy Weather
-       
+        //tablica z datami
+        const days = new Array();
+        days.push(new Date(measurements[0].date.getFullYear(), 
+                            measurements[0].date.getMonth(),
+                            measurements[0].date.getDate()));
+
+        for (let i = 0; i < 4; i++) {
+            let d = new Date(days[i].getTime() + (1 * 24 * 3600 * 1000));
+            days.push(d);
+        }
+
+        //tablica obiektów klasy Weather       
+        const weatherFor5Days = new Array(5);
+
+        for (let d of days) {
+            let ms = measurements.filter(m => {
+                return m.date.getFullYear() === d.getFullYear()
+                    && m.date.getMonth() === d.getMonth()
+                    && m.date.getDate() === d.getDate()
+            }); 
+            let w = new Weather();
+            w.set(d, ms);
+            weatherFor5Days.push(w);
+        }
+
+        console.log(weatherFor5Days);
     }
 }
 
